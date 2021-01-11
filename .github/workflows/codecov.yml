@@ -19,9 +19,9 @@ jobs:
       with:
         MINIMUM_COVERAGE: 98
     - name: comment PR
-        uses: unsplash/comment-on-pr@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-        with:
-          msg: "Check out this message!"
-          check_for_duplicate_msg: false
+      uses: unsplash/comment-on-pr@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+      with:
+        msg: "Check out this message!"
+        check_for_duplicate_msg: false
