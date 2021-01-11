@@ -12,8 +12,16 @@ jobs:
       image: swift:latest
     runs-on: ubuntu-latest
     steps:
+    - run: apt-get install libgtk+-3.0 gtk+-3.0
     - uses: actions/checkout@v2
     - run: swift test --enable-test-discovery --enable-code-coverage
     - uses: mattpolzin/swift-codecov-action@0.6.0
       with:
         MINIMUM_COVERAGE: 98
+    - name: comment PR
+        uses: unsplash/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        with:
+          msg: "Check out this message!"
+          check_for_duplicate_msg: false
