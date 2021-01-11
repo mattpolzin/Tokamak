@@ -12,7 +12,7 @@ jobs:
       image: swift:latest
     runs-on: ubuntu-latest
     steps:
-    - run: apt-get install libgtk+-3.0 gtk+-3.0
+    - run: apt-get update && apt-get install gtk+-3.0
     - uses: actions/checkout@v2
     - run: swift test --enable-test-discovery --enable-code-coverage
     - uses: mattpolzin/swift-codecov-action@0.6.0
